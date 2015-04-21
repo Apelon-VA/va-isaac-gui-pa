@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>gov.va.isaac.isaac-pa</groupId>
-		<artifactId>isaac-pa-parent</artifactId>
+		<groupId>gov.vha.isaac.gui.pa</groupId>
+		<artifactId>va-isaac-gui-pa-parent</artifactId>
 		<version>Sprint_21-SNAPSHOT</version>
 	</parent>
-	<groupId>gov.va.isaac.isaac-pa.modules</groupId>
-	<artifactId>app</artifactId>
+	<groupId>gov.vha.isaac.gui.pa.modules</groupId>
+	<artifactId>app-assembly</artifactId>
 	<packaging>pom</packaging>
 
 	<name>ISAAC Application Assembly</name>
