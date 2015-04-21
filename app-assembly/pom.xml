@@ -24,93 +24,93 @@
 
 		<!-- Configuration module. -->
 		<dependency>
-			<groupId>gov.va.isaac.isaac-pa.modules</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>config</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 
 		<!-- ISAAC Application GUI. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
-			<artifactId>isaac-app</artifactId>
-			<version>${isaac.version}</version>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
+			<artifactId>app</artifactId>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- ISAAC Import Export. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>import-export</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- ISAAC Content request. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>content-request</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- ISAAC Classifier. -->
 		<!--dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>isaac-classifier</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency-->
 
 		<!-- ISAAC Taxonomy View. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>taxonomy-view</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- ISAAC Search View. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>search-view</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- ISAAC Lego View. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>lego-view</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- ISAAC Info Model View. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>info-model-view</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- ISAAC List / Batch View. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>list-view</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- Workflow View. -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
-			<artifactId>isaac-workflow</artifactId>
-			<version>${isaac.version}</version>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
+			<artifactId>workflow</artifactId>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- Mapping GUI integration -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>mapping</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- Sync GUI integration -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>sync-view</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- Only one of the following is required - GIT or SVN - but no harm comes 
@@ -118,22 +118,22 @@
 			sync configuration in app.xml - changeSetUrlType parameter -->
 		<!-- Sync GIT integration -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>sync-git</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<!-- Sync SVN integration -->
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>sync-svn</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>gov.va.isaac.modules</groupId>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
 			<artifactId>concept-wizard-view</artifactId>
-			<version>${isaac.version}</version>
+			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -257,7 +257,7 @@
 										<!-- unzip the config module, so we can get the users.xml file 
 											out of it -->
 										<artifactItem>
-											<groupId>gov.va.isaac.isaac-pa.modules</groupId>
+											<groupId>${project.groupId}</groupId>
 											<artifactId>config</artifactId>
 											<version>${project.parent.version}</version>
 											<outputDirectory>${project.build.directory}/config/</outputDirectory>
@@ -279,9 +279,9 @@
 					</plugin>
 
 					<plugin>
-						<groupId>gov.va.isaac.modules</groupId>
+						<groupId>gov.vha.isaac.gui.modules</groupId>
 						<artifactId>mojos</artifactId>
-						<version>${isaac.version}</version>
+						<version>${va-isaac-gui.version}</version>
 						<executions>
 
 							<!-- See https://raw.githubusercontent.com/IHTSDO/ISAAC/master/mojos/src/main/java/gov/va/isaac/mojos/profileSync/ProfilesMojoBase.java 

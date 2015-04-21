@@ -33,7 +33,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<isaac.version>Sprint_21-SNAPSHOT</isaac.version>
+		<va-isaac-gui.version>Sprint_21-SNAPSHOT</va-isaac-gui.version>
 		<dbGroupId>gov.va.isaac.db</dbGroupId>
 		<dbArtifactId>solor-all</dbArtifactId>
 		<dbVersion>2015.04.07</dbVersion>
