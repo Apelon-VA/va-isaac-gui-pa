@@ -90,7 +90,7 @@
 		<workflowUserName>editor2</workflowUserName>
 	</user>
 	<newUserDefaults>
-		<statedInferredPolicy>inferredThenStated</statedInferredPolicy>
+		<statedInferredPolicy>stated</statedInferredPolicy>
 	</newUserDefaults>
 </isaacUserCreation>
 	

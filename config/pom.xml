@@ -18,7 +18,7 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>gov.va.isaac.modules</groupId>
+				<groupId>gov.vha.isaac.gui.modules</groupId>
 				<artifactId>mojos</artifactId>
 				<version>${va-isaac-gui.version}</version>
 				<executions>
