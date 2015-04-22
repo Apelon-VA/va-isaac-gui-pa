@@ -154,7 +154,7 @@
 
 	<modules>
 		<module>config</module>
-		<module>app</module>
+		<module>app-assembly</module>
 	</modules>
 
 	<reporting>
