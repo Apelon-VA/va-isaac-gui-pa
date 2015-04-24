@@ -34,11 +34,10 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<va-isaac-gui.version>Sprint_21-SNAPSHOT</va-isaac-gui.version>
-		<dbGroupId>gov.va.isaac.db</dbGroupId>
+		<dbGroupId>gov.vha.solor.modules</dbGroupId>
 		<dbArtifactId>solor-all</dbArtifactId>
-		<dbVersion>2015.04.07</dbVersion>
+		<dbVersion>1.8-SNAPSHOT</dbVersion>
 		<dbClassifier>active-only</dbClassifier>
-		<dbType>bdb.zip</dbType>
 		
 		<!-- Yes, silly, but these don't seem to propagate down properly otherwise, yet another maven bug -->
 		<organization.name>${project.organization.name}</organization.name>

@@ -269,7 +269,16 @@
 											<artifactId>${dbArtifactId}</artifactId>
 											<version>${dbVersion}</version>
 											<classifier>${dbClassifier}</classifier>
-											<type>${dbType}</type>
+											<type>cradle.zip</type>
+											<outputDirectory>${project.build.directory}/isaac-app/</outputDirectory>
+										</artifactItem>
+										
+										<artifactItem>
+											<groupId>${dbGroupId}</groupId>
+											<artifactId>${dbArtifactId}</artifactId>
+											<version>${dbVersion}</version>
+											<classifier>${dbClassifier}</classifier>
+											<type>lucene.zip</type>
 											<outputDirectory>${project.build.directory}/isaac-app/</outputDirectory>
 										</artifactItem>
 									</artifactItems>
