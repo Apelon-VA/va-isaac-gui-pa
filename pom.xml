@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>gov.vha.isaac</groupId>
+		<artifactId>isaac-parent</artifactId>
+		<version>1.6-SNAPSHOT</version>
+	</parent>
 
 	<groupId>gov.vha.isaac.gui.pa</groupId>
 	<artifactId>va-isaac-gui-pa-parent</artifactId>
@@ -8,31 +13,17 @@
 	<packaging>pom</packaging>
 
 	<name>ISAAC Project Assembly Parent</name>
-	<url>https://csfe.aceworkspace.net/sf/projects/veterans_administration_project/</url>
-
-	<licenses>
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-			<comments>Copyright Notice
-    This is a work of the U.S. Government and is not subject to copyright
-    protection in the United States. Foreign copyrights may apply.
-			</comments>
-		</license>
-	</licenses>
-	
-	<organization>
-		<name>U.S. Department of Veterans Affairs</name>
-		<url>www.va.gov</url>
-	</organization>
 
 	<description>
 		The Maven Parent POM file for the ISAAC project assembly modules.  Declares shared dependencies, sets up the build.
+		This packages all of the ISAAC modules into a runnable application with a GUI.
 	</description>
+	
+	<scm>
+		<url>https://github.com/Apelon-VA/va-isaac-gui-pa.git</url>
+	</scm>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<va-isaac-gui.version>Sprint_21-SNAPSHOT</va-isaac-gui.version>
 		<dbGroupId>gov.vha.solor.modules</dbGroupId>
 		<dbArtifactId>solor-all</dbArtifactId>
@@ -44,69 +35,20 @@
 		<scm.url>${project.scm.url}</scm.url>
 	</properties>
 
-	<scm>
-		<url>https://github.com/Apelon-VA/va-isaac-gui-pa</url>
-	</scm>
+
+	<!-- This is only used for publishing the site -->
 	<distributionManagement>
 		<site>
 			<id>site</id>
-			<url>scm:git:git@github.com:Apelon-VA/ISAAC-PA.git</url>
+			<url>scm:git:git@github.com:Apelon-VA/va-isaac-gui-pa.git</url>
 		</site>
 	</distributionManagement>
 
 	<build>
 		<plugins>
-
-			<!-- Java version 1.8 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>external.atlassian.jgitflow</groupId>
-				<artifactId>jgitflow-maven-plugin</artifactId>
-				<version>1.0-m4.3</version>
-				<configuration>
-					<pushReleases>true</pushReleases>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<scmCommentPrefix>[jgitflow-plugin]</scmCommentPrefix>
-					<enableSshAgent>true</enableSshAgent>
-					<allowSnapshots>true</allowSnapshots>
-					<enableFeatureVersions>true</enableFeatureVersions>
-					<flowInitContext>
-						<masterBranchName>master</masterBranchName>
-						<developBranchName>develop</developBranchName>
-						<featureBranchPrefix>feature-</featureBranchPrefix>
-						<releaseBranchPrefix>release-</releaseBranchPrefix>
-						<hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
-					</flowInitContext>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.8</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.bcel</groupId>
-						<artifactId>bcel</artifactId>
-						<version>6.0-S</version>  <!-- This is a SNAPSHOT version that Dan installed on our Archiva server to provide Java 8 support -->
-						<!-- See https://csfe.aceworkspace.net/sf/tracker/do/viewArtifact/projects.informatics_architecture/tracker.4_defects/artf232420 -->
-					</dependency>
-				</dependencies>
-			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.4</version>
 				<executions>
 					<execution>
 						<id>attach-descriptor</id>
@@ -133,10 +75,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-publish-plugin</artifactId>
-				<version>1.1</version>
-				<configuration>
-					<scmBranch>gh-pages</scmBranch>
-				</configuration>
 				<executions>
 					<execution>
 						<id>scm-publish</id>
@@ -147,7 +85,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 
@@ -155,67 +92,4 @@
 		<module>config</module>
 		<module>app-assembly</module>
 	</modules>
-
-	<reporting>
-		<excludeDefaults>true</excludeDefaults>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.8</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>index</report>
-							<report>license</report>
-							<report>dependencies</report>
-							<report>dependency-convergence</report>
-							<report>plugin-management</report>
-							<report>scm</report>
-							<report>summary</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.1</version>
-				<inherited>false</inherited>
-				<configuration>
-					<notimestamp>true</notimestamp>
-					<additionalparam>-Xdoclint:none</additionalparam>
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>aggregate</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jxr-plugin</artifactId>
-				<version>2.5</version>
-				<inherited>false</inherited>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>aggregate</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jdepend-maven-plugin</artifactId>
-				<version>2.0</version>
-			</plugin>
-		</plugins>
-	</reporting>
-
 </project>

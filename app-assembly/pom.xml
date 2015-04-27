@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>gov.vha.isaac.gui.pa</groupId>
 		<artifactId>va-isaac-gui-pa-parent</artifactId>
@@ -145,7 +143,6 @@
 				<!-- metadata we want in the output package -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.8</version>
 				<executions>
 					<execution>
 						<id>copy metadata files</id>
@@ -192,7 +189,6 @@
 
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.9</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
@@ -234,8 +230,7 @@
 			<activation>
 				<activeByDefault>false</activeByDefault>
 				<property>
-					<name>!skipDB</name>  <!-- Hack maven, which still doesn't allow chaining of profiles. What year 
-						is this? -->
+					<name>!skipDB</name>  <!-- Hack maven, which still doesn't allow chaining of profiles. What year is this? -->
 				</property>
 			</activation>
 			<id>zipWithDB</id>
@@ -254,8 +249,7 @@
 								</goals>
 								<configuration>
 									<artifactItems>
-										<!-- unzip the config module, so we can get the users.xml file 
-											out of it -->
+										<!-- unzip the config module, so we can get the users.xml file out of it -->
 										<artifactItem>
 											<groupId>${project.groupId}</groupId>
 											<artifactId>config</artifactId>
@@ -273,6 +267,7 @@
 											<outputDirectory>${project.build.directory}/isaac-app/</outputDirectory>
 										</artifactItem>
 										
+										<!-- The corresponding index -->
 										<artifactItem>
 											<groupId>${dbGroupId}</groupId>
 											<artifactId>${dbArtifactId}</artifactId>
@@ -294,9 +289,8 @@
 						<executions>
 
 							<!-- See https://raw.githubusercontent.com/IHTSDO/ISAAC/master/mojos/src/main/java/gov/va/isaac/mojos/profileSync/ProfilesMojoBase.java 
-								for details on how authentication is handled for this. This execution only 
-								runs if changeSetUrl and changeSetUrlType are defined in app.xml To skip 
-								SCM steps for profiles entirely, specify '-DprofileSyncDisable=true' -->
+								for details on how authentication is handled for this. This execution only runs if changeSetUrl and changeSetUrlType are defined 
+								in app.xml To skip SCM steps for profiles entirely, specify '-DprofileSyncDisable=true' -->
 							<execution>
 								<id>get-and-link-profile-scm</id>
 								<phase>prepare-package</phase>
@@ -306,8 +300,7 @@
 								<configuration>
 									<userProfileFolderLocation>${project.build.directory}/isaac-app/profiles/</userProfileFolderLocation>
 									<appXMLFile>${project.build.directory}/config/app.xml</appXMLFile>
-									<!--Depending on the SCM implementation, there are multiple ways 
-										to handle this auth, see comments above -->
+									<!--Depending on the SCM implementation, there are multiple ways to handle this auth, see comments above -->
 									<!--profileSyncUsername></profileSyncUsername> 
 									<profileSyncPassword></profileSyncPassword -->
 								</configuration>
@@ -321,7 +314,7 @@
 									<goal>setup-terminology-store</goal>
 								</goals>
 								<configuration>
-									<bdbFolderLocation>${project.build.directory}/isaac-app/</bdbFolderLocation>
+									<dataStoreLocation>${project.build.directory}/isaac-app/</dataStoreLocation>
 									<userProfileFolderLocation>${project.build.directory}/isaac-app/profiles/</userProfileFolderLocation>
 								</configuration>
 							</execution>
@@ -375,7 +368,7 @@
 								<id>export</id>
 								<phase>prepare-package</phase>
 								<goals>
-									<goal>Export</goal>
+									<goal>release-export</goal>
 								</goals>
 								<configuration>
 									<!-- Required -->
@@ -457,7 +450,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-resources-plugin</artifactId>
-						<version>2.6</version>
+						<version>2.7</version>
 						<executions>
 							<execution>
 								<id>install4j-resources</id>
@@ -505,7 +498,6 @@
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>build-helper-maven-plugin</artifactId>
-						<version>1.7</version>
 						<executions>
 							<execution>
 								<id>attach-installers</id>
