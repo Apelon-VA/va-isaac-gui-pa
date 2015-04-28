@@ -133,6 +133,25 @@
 			<artifactId>concept-wizard-view</artifactId>
 			<version>${va-isaac-gui.version}</version>
 		</dependency>
+		
+		<!-- Need to override the scope on these 3 logging packages -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-jul</artifactId>
+			<scope>compile</scope>
+		</dependency>
 
 	</dependencies>
 
@@ -288,14 +307,6 @@
 						<groupId>gov.vha.isaac.gui.modules</groupId>
 						<artifactId>mojos</artifactId>
 						<version>${va-isaac-gui.version}</version>
-						<dependencies>
-							<dependency>
-								<groupId>org.slf4j</groupId>
-								<artifactId>slf4j-simple</artifactId>
-								<version>${slf4j.version}</version>
-								<optional>true</optional>
-							</dependency>
-						</dependencies>
 						<executions>
 
 							<!-- See https://raw.githubusercontent.com/IHTSDO/ISAAC/master/mojos/src/main/java/gov/va/isaac/mojos/profileSync/ProfilesMojoBase.java 
