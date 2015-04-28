@@ -197,6 +197,7 @@
 						</goals>
 						<configuration>
 							<outputDirectory>${project.basedir}/target/isaac-app/lib</outputDirectory>
+							<includeScope>runtime</includeScope>
 						</configuration>
 					</execution>
 				</executions>
@@ -215,6 +216,7 @@
 							<descriptors>
 								<descriptor>${project.basedir}/src/assembly/assembly.xml</descriptor>
 							</descriptors>
+							<appendAssemblyId>false</appendAssemblyId>
 							<finalName>isaac-app</finalName>
 						</configuration>
 					</execution>
@@ -286,16 +288,24 @@
 						<groupId>gov.vha.isaac.gui.modules</groupId>
 						<artifactId>mojos</artifactId>
 						<version>${va-isaac-gui.version}</version>
+						<dependencies>
+							<dependency>
+								<groupId>org.slf4j</groupId>
+								<artifactId>slf4j-simple</artifactId>
+								<version>${slf4j.version}</version>
+								<optional>true</optional>
+							</dependency>
+						</dependencies>
 						<executions>
 
 							<!-- See https://raw.githubusercontent.com/IHTSDO/ISAAC/master/mojos/src/main/java/gov/va/isaac/mojos/profileSync/ProfilesMojoBase.java 
 								for details on how authentication is handled for this. This execution only runs if changeSetUrl and changeSetUrlType are defined 
 								in app.xml To skip SCM steps for profiles entirely, specify '-DprofileSyncDisable=true' -->
 							<execution>
-								<id>get-and-link-profile-scm</id>
+								<id>get-and-link-profiles-scm</id>
 								<phase>prepare-package</phase>
 								<goals>
-									<goal>get-and-link-profile-scm</goal>
+									<goal>get-and-link-profiles-scm</goal>
 								</goals>
 								<configuration>
 									<userProfileFolderLocation>${project.build.directory}/isaac-app/profiles/</userProfileFolderLocation>
@@ -335,10 +345,10 @@
 								runs if changeSetUrl and changeSetUrlType are defined in app.xml To skip 
 								SCM steps for profiles entirely, specify '-DprofileSyncDisable=true' -->
 							<execution>
-								<id>add-commit-and-push-profile-scm</id>
+								<id>add-commit-and-push-profiles-scm</id>
 								<phase>prepare-package</phase>
 								<goals>
-									<goal>add-commit-and-push-profile-scm</goal>
+									<goal>add-commit-and-push-profiles-scm</goal>
 								</goals>
 								<configuration>
 									<userProfileFolderLocation>${project.build.directory}/isaac-app/profiles/</userProfileFolderLocation>

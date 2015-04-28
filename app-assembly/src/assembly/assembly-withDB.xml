@@ -7,12 +7,12 @@
 	<fileSets>
 		<fileSet>
 			<directory>${project.basedir}/target/isaac-app/</directory>
-			<outputDirectory>/</outputDirectory>
+			<outputDirectory></outputDirectory>
 			<useDefaultExcludes>false</useDefaultExcludes>
 		</fileSet>
 		<fileSet>
 			<directory>${project.basedir}/src/main/scripts</directory>
-			<outputDirectory>/</outputDirectory>
+			<outputDirectory></outputDirectory>
 		</fileSet>
 	</fileSets>
 	<includeBaseDirectory>false</includeBaseDirectory>
