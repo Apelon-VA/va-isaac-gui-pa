@@ -256,8 +256,8 @@
                         <object class="com.install4j.api.beans.ScriptProperty">
                           <void property="value">
                             <string>long memory = (SystemInfo.getPhysicalMemory() / 1024l / 1024l);
-long desiredMax = 3000;
-long start = 768;
+long desiredMax = 6000;
+long start = 2000;
 
 long max =  (long)(memory * 0.65);
 if (max &lt; desiredMax)
