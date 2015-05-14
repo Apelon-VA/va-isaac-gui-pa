@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>gov.vha.isaac.gui.pa.modules</groupId>
 	<artifactId>app-assembly</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
 	<name>ISAAC Application Assembly</name>
 	<description>Assembles specified ISAAC modules and configuration into an application.</description>
@@ -157,6 +157,16 @@
 
 	<build>
 		<plugins>
+			<!-- Ideally, we would just say <packaging>jar</packaging> but that causes issues for Eclipse and Netbeans...
+			So we leave it as jar, but then disable the jar plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<skipIfEmpty>true</skipIfEmpty>
+				</configuration>
+			</plugin>
+		
 			<!-- Assembly the basic app (sans DB or profile info) in a build folder -->
 			<plugin>
 				<!-- metadata we want in the output package -->
