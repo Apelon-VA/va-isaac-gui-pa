@@ -9,7 +9,8 @@
 
 	<groupId>gov.vha.isaac.gui.pa</groupId>
 	<artifactId>va-isaac-gui-pa-parent</artifactId>
-	<version>Sprint_21-SNAPSHOT</version>
+	<version>Sprint_22-SNAPSHOT</version>
+
 	<packaging>pom</packaging>
 
 	<name>ISAAC Project Assembly Parent</name>
@@ -24,8 +25,9 @@
 	</scm>
 
 	<properties>
-		<va-isaac-gui.version>Sprint_21-SNAPSHOT</va-isaac-gui.version>
+		<va-isaac-gui.version>Sprint_23-SNAPSHOT</va-isaac-gui.version>
 		<dbGroupId>gov.vha.solor.modules</dbGroupId>
+
 		<dbArtifactId>solor-all</dbArtifactId>
 		<dbVersion>1.8-SNAPSHOT</dbVersion>
 		<dbClassifier>active-only</dbClassifier>
