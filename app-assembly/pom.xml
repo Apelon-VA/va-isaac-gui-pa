@@ -317,8 +317,26 @@
 						<groupId>gov.vha.isaac.gui.modules</groupId>
 						<artifactId>mojos</artifactId>
 						<version>${va-isaac-gui.version}</version>
+						<dependencies>
+							<!-- Only one of the following is required - GIT or SVN - but no harm comes 
+							from having both - the correct implementation will be selected based on the 
+							sync configuration in app.xml - changeSetUrlType parameter -->
+							
+							<!-- Sync GIT integration -->
+							<dependency>
+								<groupId>gov.vha.isaac.gui.modules</groupId>
+								<artifactId>sync-git</artifactId>
+								<version>${va-isaac-gui.version}</version>
+							</dependency>
+					
+							<!-- Sync SVN integration -->
+							<dependency>
+								<groupId>gov.vha.isaac.gui.modules</groupId>
+								<artifactId>sync-svn</artifactId>
+								<version>${va-isaac-gui.version}</version>
+							</dependency>
+						</dependencies>
 						<executions>
-
 							<!-- See https://raw.githubusercontent.com/IHTSDO/ISAAC/master/mojos/src/main/java/gov/va/isaac/mojos/profileSync/ProfilesMojoBase.java 
 								for details on how authentication is handled for this. This execution only runs if changeSetUrl and changeSetUrlType are defined 
 								in app.xml To skip SCM steps for profiles entirely, specify '-DprofileSyncDisable=true' -->
