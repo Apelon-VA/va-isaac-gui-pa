@@ -2,7 +2,7 @@
 <!-- TODO update this so that the version number populates from maven.	Also - dynamically update the schema location path to point to the appropriate
  tag within github (can I be clever enough to figure this out from the maven isaac version?) -->
 <isaacAppConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Apelon-VA/ISAAC/master/isaac-app/src/main/resources/xsd/AppConfigSchema.xsd">
+	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Apelon-VA/va-isaac-gui/master/app/src/main/resources/xsd/AppConfigSchema.xsd">
 	<!-- 
 		This file is validated against a schema, thus the order of each of these entries matters.
 		Do not change it without also updating the corresponding schema. 
@@ -16,23 +16,16 @@
 	<!-- Application properties -->
 	<applicationTitle>Develop ISAAC App - ISAAC Toolkit</applicationTitle>
 
+	<!-- Disable changesets for now -->
 	<!-- GIT Testing -->
 	<!--changeSetUrl>ssh://someuser@csfe.aceworkspace.net:29418/isaac_pa_demo_changesets</changeSetUrl>
 	<changeSetUrlType>GIT</changeSetUrlType-->
 
 	<!-- SVN Testing -->
-	<changeSetUrl>https://csfe.aceworkspace.net/svn/repos/isaac_pa_demo_changesets_svn</changeSetUrl>
-	<changeSetUrlType>SVN</changeSetUrlType>
+	<!--changeSetUrl>https://csfe.aceworkspace.net/svn/repos/isaac_pa_demo_changesets_svn</changeSetUrl>
+	<changeSetUrlType>SVN</changeSetUrlType-->
 	
 	<workflowServerUrl>http://162.243.255.43:8080/kie-wb/</workflowServerUrl>
 	<workflowServerDeploymentId>gov.va.isaac.demo:terminology-authoring:1.5</workflowServerDeploymentId>
-
-	<!-- Path info -->
-	<defaultEditPathName>ISAAC development path</defaultEditPathName>
-	<defaultEditPathUuid>f5c0a264-15af-5b94-a964-bb912ea5634f</defaultEditPathUuid>
-	<defaultViewPathName>ISAAC development path</defaultViewPathName>
-	<defaultViewPathUuid>f5c0a264-15af-5b94-a964-bb912ea5634f</defaultViewPathUuid>
-	<workflowPromotionPathName>ISAAC release path</workflowPromotionPathName>
-	<workflowPromotionPathUuid>c73859bc-4887-5273-8f57-c9b2557d5ac2</workflowPromotionPathUuid>
 
 </isaacAppConfig>

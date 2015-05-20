@@ -22,8 +22,10 @@ workflowDB/
 drools-rules/
 profiles/
 *.bdb/
+*.data/
 *.hidden/
 
 scenicView.properties/
 .idea
 isaac-pa-parent.iml
+/.pydevproject

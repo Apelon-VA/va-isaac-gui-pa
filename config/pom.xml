@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
-		<groupId>gov.va.isaac.isaac-pa</groupId>
-		<artifactId>isaac-pa-parent</artifactId>
-		<version>Sprint_20</version>
+		<groupId>gov.vha.isaac.gui.pa</groupId>
+		<artifactId>va-isaac-gui-pa-parent</artifactId>
+		<version>Sprint_21.1</version>
 	</parent>
-	<groupId>gov.va.isaac.isaac-pa.modules</groupId>
+	<groupId>gov.vha.isaac.gui.pa.modules</groupId>
 	<artifactId>config</artifactId>
 	<packaging>jar</packaging>
 
@@ -17,9 +16,9 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>gov.va.isaac.modules</groupId>
+				<groupId>gov.vha.isaac.gui.modules</groupId>
 				<artifactId>mojos</artifactId>
-				<version>${isaac.version}</version>
+				<version>${va-isaac-gui.version}</version>
 				<executions>
 					<execution>
 						<id>validate-configuration</id>
