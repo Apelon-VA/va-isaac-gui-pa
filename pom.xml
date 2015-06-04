@@ -25,7 +25,7 @@
 	</scm>
 
 	<properties>
-		<va-isaac-gui.version>23.1</va-isaac-gui.version>
+		<va-isaac-gui.version>23.1.1</va-isaac-gui.version>
 		<dbGroupId>gov.vha.solor.modules</dbGroupId>
 
 		<dbArtifactId>snomed</dbArtifactId>
