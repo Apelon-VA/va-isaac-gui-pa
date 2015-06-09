@@ -311,12 +311,18 @@ return "-Xmx" + desiredMax + "M";</string>
                         <string>43</string>
                       </void>
                       <void property="vmOptions">
-                        <array class="java.lang.String" length="2">
+                        <array class="java.lang.String" length="4">
                           <void index="0">
                             <string>${installer:xms}</string>
                           </void>
                           <void index="1">
                             <string>${installer:xmx}</string>
+                          </void>
+                          <void index="2">
+                            <string>-XX:+UseG1GC</string>
+                          </void>
+                          <void index="3">
+                            <string>-XX:MetaspaceSize=100M</string>
                           </void>
                         </array>
                       </void>
