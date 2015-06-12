@@ -96,6 +96,13 @@
 			<artifactId>workflow</artifactId>
 			<version>${va-isaac-gui.version}</version>
 		</dependency>
+		
+		<!-- Logic View  -->
+		<dependency>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
+			<artifactId>logic-view</artifactId>
+			<version>${va-isaac-gui.version}</version>
+		</dependency>
 
 		<!-- Mapping GUI integration -->
 		<dependency>
