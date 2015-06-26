@@ -1,7 +1,7 @@
-va-isaac-gui-pa
-========
+#va-isaac-gui-pa
 
-** Configurations and Custom Brand **
+
+###Configurations and Custom Brand
 
 To create your own custom branded version of isaac, fork the entire va-isaac-gui-pa project to a new repository.
 
@@ -18,7 +18,7 @@ Each XML file is validated to a schema during the assembly process - the XML fil
 
 Within the app-assembly module, you can customize the installer, and the launch scripts that are bundled with the build - under `src/main/`
 
-** To launch ISAAC: **
+###To launch ISAAC:
 
 - Build va-isaac-gui-pa project with maven - optionally enabling the 'install4j' profile, if you have install4j available.
 - The packaged bundle will be created in `/app-assembly/target/isaac-app-with-DB.zip`.  
