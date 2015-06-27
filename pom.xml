@@ -9,7 +9,7 @@
 
 	<groupId>gov.vha.isaac.gui.pa</groupId>
 	<artifactId>va-isaac-gui-pa-parent</artifactId>
-	<version>Sprint_23</version>
+	<version>Sprint_24-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
