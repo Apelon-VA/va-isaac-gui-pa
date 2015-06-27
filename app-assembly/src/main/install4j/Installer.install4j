@@ -259,7 +259,7 @@
 long desiredMax = 6000;
 long start = 2000;
 
-long max =  (long)(memory * 0.65);
+long max =  (long)(memory * 0.75);
 if (max &lt; desiredMax)
 {
  	if (max &gt;= start)
@@ -291,7 +291,7 @@ return "-Xmx" + desiredMax + "M";</string>
                       <void property="script">
                         <object class="com.install4j.api.beans.ScriptProperty">
                           <void property="value">
-                            <string>return "-Xms" + 768 + "M";</string>
+                            <string>return "-Xms" + 2000 + "M";</string>
                           </void>
                         </object>
                       </void>
@@ -311,12 +311,18 @@ return "-Xmx" + desiredMax + "M";</string>
                         <string>43</string>
                       </void>
                       <void property="vmOptions">
-                        <array class="java.lang.String" length="2">
+                        <array class="java.lang.String" length="4">
                           <void index="0">
                             <string>${installer:xms}</string>
                           </void>
                           <void index="1">
                             <string>${installer:xmx}</string>
+                          </void>
+                          <void index="2">
+                            <string>-XX:+UseG1GC</string>
+                          </void>
+                          <void index="3">
+                            <string>-XX:MetaspaceSize=100M</string>
                           </void>
                         </array>
                       </void>
