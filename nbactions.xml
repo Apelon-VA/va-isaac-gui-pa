@@ -4,6 +4,7 @@
             <actionName>CUSTOM-clean install ochre</actionName>
             <displayName>clean install ochre</displayName>
             <goals>
+                <goal>-e</goal>
                 <goal>clean</goal>
                 <goal>install</goal>
             </goals>
