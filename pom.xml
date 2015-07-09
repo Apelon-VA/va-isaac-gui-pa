@@ -1,97 +1,116 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>gov.vha.isaac</groupId>
-		<artifactId>isaac-parent</artifactId>
-		<version>1.8-SNAPSHOT</version>
-	</parent>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>gov.vha.isaac</groupId>
+        <artifactId>isaac-parent</artifactId>
+        <version>1.8-SNAPSHOT</version>
+    </parent>
 
-	<groupId>gov.vha.isaac.gui.pa</groupId>
-	<artifactId>va-isaac-gui-pa-parent</artifactId>
-	<version>Sprint_24-SNAPSHOT</version>
+    <groupId>gov.vha.isaac.gui.pa</groupId>
+    <artifactId>va-isaac-gui-pa-parent</artifactId>
+    <version>Sprint_24-SNAPSHOT</version>
 
-	<packaging>pom</packaging>
+    <packaging>pom</packaging>
 
-	<name>ISAAC Project Assembly Parent</name>
+    <name>ISAAC Project Assembly Parent</name>
 
-	<description>
-		The Maven Parent POM file for the ISAAC project assembly modules.  Declares shared dependencies, sets up the build.
-		This packages all of the ISAAC modules into a runnable application with a GUI.
-	</description>
+    <description>
+        The Maven Parent POM file for the ISAAC project assembly modules.  Declares shared dependencies, sets up the build.
+        This packages all of the ISAAC modules into a runnable application with a GUI.
+    </description>
 	
-	<scm>
-		<url>https://github.com/Apelon-VA/va-isaac-gui-pa.git</url>
-	</scm>
+    <scm>
+        <url>https://github.com/Apelon-VA/va-isaac-gui-pa.git</url>
+    </scm>
 
-	<properties>
-		<va-isaac-gui.version>23.3-SNAPSHOT</va-isaac-gui.version>
-		<dbGroupId>gov.vha.solor.modules</dbGroupId>
+    <properties>
+        <va-isaac-gui.version>23.3-SNAPSHOT</va-isaac-gui.version>
+        <dbGroupId>gov.vha.solor.modules</dbGroupId>
 
-		<dbArtifactId>snomed</dbArtifactId>
-		<dbVersion>1.11-SNAPSHOT</dbVersion>
-		<dbClassifier>all</dbClassifier>
+        <dbVersion>1.11-SNAPSHOT</dbVersion>
+        <dbClassifier>all</dbClassifier>
 		
-		<!-- Yes, silly, but these don't seem to propagate down properly otherwise, yet another maven bug -->
-		<organization.name>${project.organization.name}</organization.name>
-		<scm.url>${project.scm.url}</scm.url>
-	</properties>
+        <!-- Yes, silly, but these don't seem to propagate down properly otherwise, yet another maven bug -->
+        <organization.name>${project.organization.name}</organization.name>
+        <scm.url>${project.scm.url}</scm.url>
+    </properties>
 
 
-	<!-- This is only used for publishing the site -->
-	<distributionManagement>
-		<site>
-			<id>site</id>
-			<url>scm:git:git@github.com:Apelon-VA/va-isaac-gui-pa.git</url>
-		</site>
-	</distributionManagement>
+    <!-- This is only used for publishing the site -->
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <url>scm:git:git@github.com:Apelon-VA/va-isaac-gui-pa.git</url>
+        </site>
+    </distributionManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-descriptor</id>
-						<goals>
-							<goal>attach-descriptor</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>stage-for-scm-publish</id>
-						<phase>post-site</phase>
-						<goals>
-							<goal>stage</goal>
-						</goals>
-						<configuration>
-							<skipDeploy>false</skipDeploy>
-						</configuration>
-					</execution>
-				</executions>
-				<configuration>
-					<skipDeploy>true</skipDeploy>
-				</configuration>
-			</plugin>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-descriptor</id>
+                        <goals>
+                            <goal>attach-descriptor</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>stage-for-scm-publish</id>
+                        <phase>post-site</phase>
+                        <goals>
+                            <goal>stage</goal>
+                        </goals>
+                        <configuration>
+                            <skipDeploy>false</skipDeploy>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skipDeploy>true</skipDeploy>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-scm-publish-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>scm-publish</id>
-						<phase>site-deploy</phase>
-						<goals>
-							<goal>publish-scm</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>scm-publish</id>
+                        <phase>site-deploy</phase>
+                        <goals>
+                            <goal>publish-scm</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
-	<modules>
-		<module>config</module>
-		<module>app-assembly</module>
-	</modules>
+    <modules>
+        <module>config</module>
+        <module>app-assembly</module>
+    </modules>
+    <profiles>
+        <profile>
+            <id>oft</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <dbArtifactId>snomed</dbArtifactId>
+            </properties>
+        </profile>
+        <profile>
+            <id>ochre</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <dbArtifactId>snomed-ochre</dbArtifactId>
+            </properties>
+        </profile>
+    </profiles>
 </project>
