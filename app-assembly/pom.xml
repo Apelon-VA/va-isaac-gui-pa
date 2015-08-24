@@ -48,13 +48,6 @@
 			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
-		<!-- ISAAC Classifier. -->
-		<!--dependency>
-			<groupId>gov.vha.isaac.gui.modules</groupId>
-			<artifactId>isaac-classifier</artifactId>
-			<version>${va-isaac-gui.version}</version>
-		</dependency-->
-
 		<!-- ISAAC Taxonomy View. -->
 		<dependency>
 			<groupId>gov.vha.isaac.gui.modules</groupId>
