@@ -55,6 +55,13 @@
 			<version>${va-isaac-gui.version}</version>
 		</dependency>
 
+		<!-- ISAAC Concept View. -->
+		<dependency>
+			<groupId>gov.vha.isaac.gui.modules</groupId>
+			<artifactId>concept-view</artifactId>
+			<version>${va-isaac-gui.version}</version>
+		</dependency>
+
 		<!-- ISAAC Search View. -->
 		<dependency>
 			<groupId>gov.vha.isaac.gui.modules</groupId>
