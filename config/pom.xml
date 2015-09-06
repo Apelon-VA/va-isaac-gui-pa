@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>gov.vha.isaac.gui.pa</groupId>
 		<artifactId>va-isaac-gui-pa-parent</artifactId>
-		<version>Sprint_25</version>
+		<version>Sprint_26-SNAPSHOT</version>
 	</parent>
 	<groupId>gov.vha.isaac.gui.pa.modules</groupId>
 	<artifactId>config</artifactId>
