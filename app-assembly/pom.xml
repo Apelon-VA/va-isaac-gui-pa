@@ -15,7 +15,7 @@
 
 	<properties>
 		<!-- To make the Export Run you must pass -DskipExportAssembly=false -->
-		<skipExportAssembly>false</skipExportAssembly>
+		<skipExportAssembly>true</skipExportAssembly>
 	</properties>
 
 	<dependencies>
