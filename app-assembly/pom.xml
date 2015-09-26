@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>gov.vha.isaac.gui.pa</groupId>
 		<artifactId>va-isaac-gui-pa-parent</artifactId>
-		<version>Sprint_25</version>
+		<version>Sprint_26</version>
 	</parent>
 	<groupId>gov.vha.isaac.gui.pa.modules</groupId>
 	<artifactId>app-assembly</artifactId>
@@ -437,8 +437,17 @@
 
 									<path>
 										<fsn>ISAAC development path</fsn>
-										<uuid>f5c0a264-15af-5b94-a964-bb912ea5634f</uuid>
+										<uuid>32d7e06d-c8ae-516d-8a33-df5bcc9c9ec7</uuid>
 									</path>
+									
+									<uscrsDateFilter>2005-10-06 2:22:55.1 PM</uscrsDateFilter>
+									
+									<exportFormat>uscrs</exportFormat>
+									
+									<modules>
+										<module>bf291637-8f18-38a3-8cc9-fc28927d68ad</module>
+										<module>1b4f1ba5-b725-390f-8c3b-33ec7096bdca</module>
+									</modules>
 								</configuration>
 							</execution>
 

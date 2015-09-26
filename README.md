@@ -25,3 +25,7 @@ Within the app-assembly module, you can customize the installer, and the launch 
   - If the install4j profile was activated, these installers will be inside the target folder as well.
 - After unzipping (or installing) the packaged bundle, it can be launched using the OS specific script.
   - If installed via installer, rather than a script, there will be an OS native ISAAC launcher as produced by install4j
+  
+  
+Release Notes
+mvn jgitflow:release-start jgitflow:release-finish -DreleaseVersion=Sprint_26 -DdevelopmentVersion=Sprint_27-SNAPSHOT -DaltDeploymentRepository=maestro::default::https://va.maestrodev.com/archiva/repository/va-releases  -DdefaultOriginUrl=https://github.com/Apelon-VA/va-isaac-gui-pa.git -Pinstaller

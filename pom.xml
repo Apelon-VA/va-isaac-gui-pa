@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>gov.vha.isaac</groupId>
 		<artifactId>isaac-parent</artifactId>
-		<version>1.9</version>
+		<version>1.10</version>
 	</parent>
 
 	<groupId>gov.vha.isaac.gui.pa</groupId>
 	<artifactId>va-isaac-gui-pa-parent</artifactId>
-	<version>Sprint_25</version>
+	<version>Sprint_26</version>
 
 	<packaging>pom</packaging>
 
@@ -25,11 +25,11 @@
 	</scm>
 
 	<properties>
-		<va-isaac-gui.version>23.4</va-isaac-gui.version>
+		<va-isaac-gui.version>23.5</va-isaac-gui.version>
 		<dbGroupId>gov.vha.solor.modules</dbGroupId>
 
 		<dbArtifactId>snomed</dbArtifactId>
-		<dbVersion>1.12</dbVersion>
+		<dbVersion>1.13</dbVersion>
 		<dbClassifier>all</dbClassifier>
 		
 		<!-- Yes, silly, but these don't seem to propagate down properly otherwise, yet another maven bug -->
