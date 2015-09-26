@@ -9,6 +9,7 @@
 			<directory>${project.build.directory}/export/</directory>
 			<includes>
 				<include>*.jbin</include>
+				<include>*.xls</include>
 			</includes>
 			<outputDirectory></outputDirectory>
 			<useDefaultExcludes>false</useDefaultExcludes>
