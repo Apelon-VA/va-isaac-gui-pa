@@ -28,4 +28,4 @@ Within the app-assembly module, you can customize the installer, and the launch 
   
   
 Release Notes
-mvn jgitflow:release-start jgitflow:release-finish -DreleaseVersion=Sprint_26 -DdevelopmentVersion=Sprint_27-SNAPSHOT -DaltDeploymentRepository=maestro::default::https://va.maestrodev.com/archiva/repository/va-releases  -DdefaultOriginUrl=https://github.com/Apelon-VA/va-isaac-gui-pa.git -Pinstaller
+mvn jgitflow:release-start jgitflow:release-finish -DreleaseVersion=Sprint_27 -DdevelopmentVersion=Sprint_28-SNAPSHOT -DaltDeploymentRepository=maestro::default::https://va.maestrodev.com/archiva/repository/va-releases  -DdefaultOriginUrl=https://github.com/Apelon-VA/va-isaac-gui-pa.git -Pinstaller
