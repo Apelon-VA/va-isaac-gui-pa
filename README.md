@@ -29,3 +29,12 @@ Within the app-assembly module, you can customize the installer, and the launch 
   
 Release Notes
 mvn jgitflow:release-start jgitflow:release-finish -DreleaseVersion=Sprint_27 -DdevelopmentVersion=Sprint_28-SNAPSHOT -DaltDeploymentRepository=maestro::default::https://va.maestrodev.com/archiva/repository/va-releases  -DdefaultOriginUrl=https://github.com/Apelon-VA/va-isaac-gui-pa.git -Pinstaller
+
+After releasing this project, it is nice to build an maven website - do so by switching to the master branch (which contains what was just released) then execute:
+mvn package site site:stage scm-publish:publish-scm -e -DskipDB
+
+This will update the website: 
+http://apelon-va.github.io/va-isaac-gui-pa/
+
+(it actually updated the branch gh-pages, which is then automatically published by github)
+
